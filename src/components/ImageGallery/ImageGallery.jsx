@@ -1,19 +1,16 @@
+import css from './ImageGallery.module.css';
 import ImageCard from '../ImageCard/ImageCard';
 
 const ImageGallery = ({ images }) => {
   return (
-    <ul>
-      <li>
-        {images.map(image => {
-          return (
-            <ImageCard
-              key={image.id}
-              alt={image.alt_description}
-              src={image.urls.small}
-            />
-          );
-        })}
-      </li>
+    <ul className={css.list}>
+      {images.map(image => {
+        return (
+          <li key={image.id} className={css.item}>
+            <ImageCard alt={image.alt_description} src={image.urls.small} />
+          </li>
+        );
+      })}
     </ul>
   );
 };

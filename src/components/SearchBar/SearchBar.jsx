@@ -1,4 +1,6 @@
 import { Field, Form, Formik } from 'formik';
+import { CiSearch } from 'react-icons/ci';
+import css from './SearchBar.module.css';
 
 const SearchBar = ({ onSearch }) => {
   return (
@@ -11,14 +13,17 @@ const SearchBar = ({ onSearch }) => {
           actions.resetForm();
         }}
       >
-        <Form>
+        <Form className={css.form}>
           <Field
+            className={css.input}
             name="query"
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
           />
-          <button type="submit">Search</button>
+          <button className={css.button} type="submit">
+            <CiSearch size={28} />
+          </button>
         </Form>
       </Formik>
     </header>
