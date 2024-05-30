@@ -1,0 +1,12 @@
+/* .modalContent {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+} */
+.modalOverlay {
+  background-color: rgba(rgb(82, 78, 78), green, blue, 40%);
+}
+.img {
+  width: 800px;
+  height: 600px;
+}

@@ -1,13 +1,18 @@
 import css from './ImageGallery.module.css';
 import ImageCard from '../ImageCard/ImageCard';
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ images, openModal }) => {
+  console.log(images);
   return (
     <ul className={css.list}>
-      {images.map(image => {
+      {images.map(({ id, alt_description, urls: { small, regular } }) => {
         return (
-          <li key={image.id} className={css.item}>
-            <ImageCard alt={image.alt_description} src={image.urls.small} />
+          <li
+            key={id}
+            className={css.item}
+            onClick={() => openModal({ regular, alt_description })}
+          >
+            <ImageCard alt={alt_description} src={small} />
           </li>
         );
       })}
