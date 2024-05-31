@@ -12,17 +12,19 @@ const SearchBar = ({ onSearch }) => {
           actions.resetForm();
         }}
       >
-        <Form className={css.form}>
-          <Field
-            className={css.input}
-            name="query"
-            autoComplete="off"
-            autoFocus
-            placeholder="Search images and photos"
-          />
-          <button className={css.button} type="submit">
-            <CiSearch size={28} />
-          </button>
+        <Form>
+          <div className={css.form}>
+            <Field
+              className={css.input}
+              name="query"
+              autoComplete="off"
+              autoFocus
+              placeholder="Search images and photos"
+            />
+            <button className={css.button} type="submit">
+              <CiSearch size={28} />
+            </button>
+          </div>
         </Form>
       </Formik>
     </header>

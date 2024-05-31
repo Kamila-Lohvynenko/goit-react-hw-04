@@ -7,7 +7,7 @@ async function fetchImages(query, page) {
     params: { client_id: key, query, page },
   });
   console.log(response);
-  return response.data.results;
+  return response.data;
 }
 
 export { fetchImages };

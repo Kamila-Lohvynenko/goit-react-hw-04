@@ -1,12 +1,20 @@
-/* .modalContent {
-  width: 80%;
-  height: 80%;
-  margin: auto;
-} */
-.modalOverlay {
-  background-color: rgba(rgb(82, 78, 78), green, blue, 40%);
+.modal {
+  display: flex;
+  gap: 16px;
 }
 .img {
-  width: 800px;
-  height: 600px;
+  height: calc(100vh - 40px);
+}
+.inf {
+  width: 100px;
+}
+.title {
+  font-weight: 600;
+}
+.userImg {
+  border-radius: 15px;
+  margin-bottom: 0;
+}
+.description {
+  margin-bottom: 16px;
 }
