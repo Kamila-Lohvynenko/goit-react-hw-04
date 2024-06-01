@@ -1,10 +1,8 @@
-import css from './CustomModal.module.css';
+import css from './ImageModal.module.css';
 import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
-const CustomModal = ({ isOpen, closeModal, imageData }) => {
-  const { regular, alt_description, name, profile_image } = imageData || {};
-
+const CustomModal = ({ isOpen, closeModal, selectedImage }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -13,20 +11,24 @@ const CustomModal = ({ isOpen, closeModal, imageData }) => {
       onRequestClose={closeModal}
       shouldCloseOnOverlayClick={true}
     >
-      {regular && (
+      {selectedImage && (
         <div className={css.modal}>
-          <img className={css.img} src={regular} alt={alt_description} />
+          <img
+            className={css.img}
+            src={selectedImage.urls.regular}
+            alt={selectedImage.alt_description}
+          />
           <div className={css.inf}>
             <p className={css.title}>Description:</p>
-            <p className={css.description}>{alt_description}</p>
+            <p className={css.description}>{selectedImage.alt_description}</p>
             <div>
               <p className={css.title}>Author</p>
               <img
-                src={profile_image.medium}
+                src={selectedImage.user.profile_image.medium}
                 alt="user-image"
                 className={css.userImg}
               />
-              <p className={css.text}>{name}</p>
+              <p className={css.text}>{selectedImage.user.name}</p>
             </div>
           </div>
         </div>
@@ -34,5 +36,6 @@ const CustomModal = ({ isOpen, closeModal, imageData }) => {
     </Modal>
   );
 };
+// };
 
 export default CustomModal;
